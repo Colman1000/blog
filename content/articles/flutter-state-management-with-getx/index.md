@@ -1,6 +1,13 @@
 ---
 title: "Flutter State Management With GetX"
-date: 2022-05-15T11:43:13+01:00
+description: "Introducing GetX: Flutter State Management With GetX"
+date: 2022-05-15T11:43:13+01:00 
+tags: ["flutter","getx","android","ios","state management",]
+categories: ["state management", "flutter"]
+draft: false
+images: []
+keywords: ["flutter","getx","android","ios","state management"]
+summary: "GetX is a package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. It also comes with helper utilities for simplifying Internationalization, Theme management, making HTTP requests, Validators and so much more."
 ---
 
 State management in Flutter is *hot* topic everyone likes to talk about. There are many contenders in this category, the
@@ -94,9 +101,11 @@ ValueBuilder<int>(
 
 ### ObxValue
 
-This is similar to the [ValueBuilder](#valuebuilder) only that instead of a regular value like an `int` or `String`, you
-pass a `Rx instance` ( *as discussed [here](#getxcontroller)* ) and the widget updates automatically when the value
-changes.
+This is similar to the
+
+[ValueBuilder]({{< relref "#valuebuilder" >}} "ValueBuilder") only that instead of a regular value like an `int`
+or `String`, you pass a `Rx instance` ( *as discussed [here]({{< relref "#getxcontroller" >}} "GetxController")* ) and
+the widget updates automatically when the value changes.
 
 ```dart
 ObxValue((data) {
@@ -460,4 +469,4 @@ a happier developer with its unique approach to `State Management`.
 
 Watch out for the next article on `Dependency Management`, `Route Management` & `Helpers` in GetX.
 
-You can read more about Getx from [official documentation](https://pub.dev/packages/get).
+You can read more about GetX from [official documentation](https://pub.dev/packages/get).

@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "blog-innocraft-colman",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

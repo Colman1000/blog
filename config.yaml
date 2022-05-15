@@ -1,8 +1,7 @@
-baseURL: ""
+baseURL: "https://blog-innocraft-colman.web.app"
 languageCode: "en-us"
 title: "< CODEMAN />"
 theme: "hugo-PaperMod"
-disqusShortname: "codeman-1"
 
 outputs:
   home:
@@ -11,10 +10,19 @@ outputs:
     - JSON
 
 params:
+  env: production
+  disqus: "codeman"
   profileMode:
     enabled: true,
-    title: "COLMAN.TK"
-    subtitle: "Welcome to my Tech Blog 🐱‍🏍"
+    subtitle: ""
+    title: "BLOG • CODE • 🐱‍🏍"
+    imageUrl: "/icon.png"
+    imageTitle: "CodeMan Logo"
+    imageWidth: 150
+    imageHeight: 150
+    buttons:
+      - name: 🎪 Visit Portfolio
+        url: "https://colman.tk"
   socialIcons:
     - name: "github"
       url: "https://github.com/colman1000"
@@ -24,6 +32,7 @@ params:
       url: "https://stackoverflow.com/users/12045807/colman1000"
     - name: "twitter"
       url: "https://twitter.com/colman_1000"
+
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -36,4 +45,39 @@ params:
   ShowReadingTime: true
   ShowToc: true
   ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  comments: true
 
+  editPost:
+    URL: "https://github.com/Colman1000/blog/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  ShowPostNavLinks: true
+
+menu:
+  main:
+#    - identifier: portfolio
+#      name: Portfolio
+#      pre: 🎪
+#      url: https://colman.tk
+#      weight: 40
+    - identifier: articles
+      name: Articles
+      pre: 🀄
+      url: /articles
+      weight: 10
+    - identifier: categories
+      name: Categories
+      pre: 🎯
+      url: /categories/
+      weight: 20
+    - identifier: search
+      name: Search
+      pre: 🔎
+      url: /search/
+      weight: 30
+
+
+
+#🔍🔖

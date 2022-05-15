@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default " auto" }}">
+
+<head>
+    {{- partial "head.html" . }}
+</head>
+
+<body class="
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+{{- print " list" -}}
+{{- end -}}
+{{- if eq site.Params.defaultTheme `dark` -}}
+{{- print " dark" }}
+{{- end -}}
+" id="top">
+{{- partialCached "header.html" . .Page -}}
+<main class="main">
+    {{- block "main" . }}{{ end }}
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyC3VF7PgN3TUXhTelclzGTK6jc4XXFWVPk",
+            authDomain: "innocraft-colman.firebaseapp.com",
+            databaseURL: "https://innocraft-colman.firebaseio.com",
+            projectId: "innocraft-colman",
+            storageBucket: "innocraft-colman.appspot.com",
+            messagingSenderId: "929431704059",
+            appId: "1:929431704059:web:e420f05b1f6178a760bb5e",
+            measurementId: "G-EJ3Y327WSK"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</main>
+{{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+</body>
+
+</html>
