@@ -5,7 +5,11 @@ date: 2022-05-15T11:43:13+01:00
 tags: ["flutter","getx","android","ios","state management",]
 categories: ["state management", "flutter"]
 draft: false
-images: []
+cover:
+    image: "getx-state-management-cover.jpg"
+    alt: "GetX State Management in Flutter | Cover Image"
+    caption: "Flutter State Management With GetX"
+images: ['getx-state-management-cover.jpg']
 keywords: ["flutter","getx","android","ios","state management"]
 summary: "GetX is a package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. It also comes with helper utilities for simplifying Internationalization, Theme management, making HTTP requests, Validators and so much more."
 ---
@@ -19,24 +23,26 @@ and so on. For this article however, we would be taking a look at the [GetX pack
 
 GetX is a package that tackles **State management**, **Route management** and **Dependency management** in a simple,
 powerful and efficient manner. It also comes with helpers utilities for simplifying
-*Internationalization*, *Theme management*, making *HTTP requests*, *Validators* and so much more.
+*Internationalization*, *Theme management*, making *HTTP requests*, *Validation* and so much more.
 
 The highlights of GetX include the following;
 
 #### Write less code:
 
 Many other state management solutions for flutter have the bottle-neck of *boiler-plate code*; i.e. redundant code
-developers are forced to write over and over again. To reduce this hurdle, other state management solutions
-utilize `code generation`, a technique that automatically generates the boiler-plate code for the developer.
+developers are forced to write over and over again. For example, `StatefulWidgets` require both the `Widget` and `State` 
+class to perform even the most basic tasks. To reduce this hurdle, other state management solutions
+utilize `code generation`, a technique that generates the boiler-plate code for the developer.
 
 With GetX however, you do not need to worry about boiler-plate or generated code. Simply extend the `GetxController` and
-write your code like a boss.
+manage your state like a boss 😎.
 
 #### Performance & Efficiency:
 
-GetX observables (*reactive values*) are built using the low latency `GetValue` and `GetStream` classes from GetX. Hence
-there is no buffering, to very low memory consumption. The GetX controllers also auto dispose themselves when no they
-are longer in use. This makes for an efficient and performant application even on low-end devices.
+GetX observables (*reactive values*) are built using the low latency `GetValue` and `GetStream` classes from GetX. Hence,
+there is no buffering and very low memory consumption as compared to `StreamControllers`.
+The GetX controllers also auto dispose themselves when they are longer in use. This makes for an efficient and
+performant application even on low-end devices.
 
 #### Simplicity:
 
