@@ -1,0 +1,39 @@
+baseURL: ""
+languageCode: "en-us"
+title: "< CODEMAN />"
+theme: "hugo-PaperMod"
+disqusShortname: "codeman-1"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  profileMode:
+    enabled: true,
+    title: "COLMAN.TK"
+    subtitle: "Welcome to my Tech Blog 🐱‍🏍"
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/colman1000"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/colman1000"
+    - name: "stackoverflow"
+      url: "https://stackoverflow.com/users/12045807/colman1000"
+    - name: "twitter"
+      url: "https://twitter.com/colman_1000"
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: [ "title", "permalink", "summary", "content" ]
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowToc: true
+  ShowBreadCrumbs: true
+
