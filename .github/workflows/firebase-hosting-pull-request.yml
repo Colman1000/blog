@@ -22,7 +22,6 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        run: 'cd public'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
