@@ -2,6 +2,7 @@ baseURL: "https://blog.colman.tk/"
 languageCode: "en-us"
 title: "< CODEMAN />"
 theme: "hugo-PaperMod"
+tags: [ "blog" ]
 
 outputs:
   home:
@@ -57,11 +58,11 @@ params:
 
 menu:
   main:
-#    - identifier: portfolio
-#      name: Portfolio
-#      pre: 🎪
-#      url: https://colman.tk
-#      weight: 40
+    #    - identifier: portfolio
+    #      name: Portfolio
+    #      pre: 🎪
+    #      url: https://colman.tk
+    #      weight: 40
     - identifier: articles
       name: Articles
       pre: 🀄

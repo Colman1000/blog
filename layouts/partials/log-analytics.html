@@ -1,0 +1,24 @@
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import {getAnalytics, logEvent} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyC3VF7PgN3TUXhTelclzGTK6jc4XXFWVPk",
+        authDomain: "innocraft-colman.firebaseapp.com",
+        databaseURL: "https://innocraft-colman.firebaseio.com",
+        projectId: "innocraft-colman",
+        storageBucket: "innocraft-colman.appspot.com",
+        messagingSenderId: "929431704059",
+        appId: "1:929431704059:web:2789c69c6d4e294560bb5e",
+        measurementId: "G-RJKJ2S2XB5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    logEvent(analytics, 'page_open', {
+        page: '{{ .Page.RelPermalink }}',
+    });
+
+</script>
