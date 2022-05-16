@@ -8,9 +8,23 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: hugo
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Update theme
+        run: git submodule update --init --recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.98.0"
+
+      - name: Build Site
+        run: hugo --minify
+
+      - name: Deploy
+        run: 'cd public'
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_INNOCRAFT_COLMAN }}'
