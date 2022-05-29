@@ -1,17 +1,18 @@
 ---
 title: "Flutter State Management With GetX"
-description: "Introducing GetX: Flutter State Management With GetX"
+description: "Introducing GetX: Flutter State Management"
 date: 2022-05-15T11:43:13+01:00 
 tags: ["flutter","getx","android","ios","state management",]
-categories: ["state management", "flutter"]
+categories: ["State Management", "Flutter"]
 draft: false
+author: "@Colman1000"
 cover:
     image: "getx-state-management-cover.jpg"
     alt: "GetX State Management in Flutter | Cover Image"
     caption: "Flutter State Management With GetX"
 images: ['getx-state-management-cover.jpg']
 keywords: ["flutter","getx","android","ios","state management"]
-summary: "GetX is a package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. It also comes with helper utilities for simplifying Internationalization, Theme management, making HTTP requests, Validators and so much more."
+summary: "GetX is a flutter package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. It also comes with helper utilities for simplifying Internationalization, Theme management, making HTTP requests, Validators and so much more."
 ---
 
 State management in Flutter is *hot* topic everyone likes to talk about. There are many contenders in this category, the
@@ -23,7 +24,8 @@ and so on. For this article however, we would be taking a look at the [GetX pack
 
 GetX is a package that tackles **State management**, **Route management** and **Dependency management** in a simple,
 powerful and efficient manner. It also comes with helpers utilities for simplifying
-*Internationalization*, *Theme management*, making *HTTP requests*, *Validation* and so much more.
+*[Internationalization]( {{< relref "/articles/flutter-internationalization-with-getx" >}} "Flutter Internationalization With GetX")*, 
+*Theme management*, making *HTTP requests*, *Validation* and so much more.
 
 The highlights of GetX include the following;
 
@@ -71,14 +73,15 @@ Whichever you'd pick depends on your use case.
 GetX provides options to help you handle single value state in a simple and elegant manner. These can be used in cases
 where you simply need to toggle the `obscureText` property in a TextField to reveal/hide the value, changing the current
 index for a
-`BottomNavigationBar`, toggle the visibility of a Widget or even change the `Image.Network` child of a Container based
-on a single value.
+`BottomNavigationBar`, toggle the visibility of a Widget or change the child of a `Container` widget from
+`Image.network` to a `CupertinoActivityIndicator` based on a single (*boolean*) value.
 
 ### ValueBuilder
 
-This is a simplified version of a `StatefulWidget`. It aims to simplify verbosity of the writing a single value Widget.
+This is a simplified version of a `StatefulWidget`. It aims to simplify verbosity of the writing `StatefulWidget's` that 
+handle one single value.
 
-To use the `ValueBuilder` Widget, simply create the widget and give it a type as shown below and give it
+To use the `ValueBuilder` Widget, simply create the `ValueBuilder` widget, give it a `Type` as shown below and give it
 an `initialValue`.
 
 *NB: If you ever use a `ChangeNotifier` or a `StreamController`  as the value of the builder, the value is automatically
@@ -108,7 +111,6 @@ ValueBuilder<int>(
 ### ObxValue
 
 This is similar to the
-
 [ValueBuilder]({{< relref "#valuebuilder" >}} "ValueBuilder") only that instead of a regular value like an `int`
 or `String`, you pass a `Rx instance` ( *as discussed [here]({{< relref "#getxcontroller" >}} "GetxController")* ) and
 the widget updates automatically when the value changes.
@@ -134,16 +136,16 @@ Before we talk about this section; Let me introduce you to ... 🥁 ... `GetxCon
 
 ### GetxController
 
-GetX provides a neat way to separate your business logic from your View or UI elements. You can completely remove
-StatefulWidget by using GetxController since it has `onInit` and `onClose` methods which serve same functions as
-the `initState` and `dispose` in a `StatefulWidget`.
+GetX provides a neat way to separate your business logic from your View or UI elements. You can get around 
+with not using StatefulWidgets by using GetxController since it has `onInit` and `onClose` methods which serve same
+functions as the `initState` and `dispose` in a `StatefulWidget`.
 
 When your controller is created in memory, the `onInit` method is called immediately, and the `onClose` method is called
 when it is removed from memory.
 
-There is another method, the `onReady` method, which is called after the widget has been rendered on the screen.
+There is another method, the `onReady` method, which is called soon after the widget has been rendered on the screen.
 
-Let's consider the Flutter Counter App implement with GetX;
+Let's consider the following GetX controller;
 
 ```dart
 class CounterController extends GetxController {
@@ -173,10 +175,12 @@ class CounterController extends GetxController {
 
 ```
 
+NB: All the overrides above are *optional*
+
 #### Reactive Variables
 
-To use make the `GetxController` useful, we need to create *observable or reactive*  variables. These variables help to
-inform your widgets when their value changes so the widgets can re-render.
+To make the `GetxController` useful, we need to create *observable/reactive*  variables. These variables help to
+notify other widgets, listening to them, of value changes so they ( *the listening widgets* ) can re-render.
 
 There are several ways to create observable variables in GetX;
 
@@ -188,8 +192,8 @@ GetX provides helpers for dart primitive types to easily create observables. The
 Example;
 
 ```dart
-var counter = RxInt(0);
-var isName = RxnString(null);
+final counter = RxInt(0);
+final isName = RxnString(null);
 ```
 
 #### 2. Using Rx and Dart Generics
@@ -200,8 +204,9 @@ method you would likely use for your custom types or classes.
 Example;
 
 ```dart
-var counter = Rx<int>(0);
-var isName = Rx<String?>(null);
+final counter = Rx<int>(0);
+final isName = Rx<String?>(null);
+final item = Rx<MyCustomClass>(MyCustomClass(id:2));
 ```
 
 #### 3. Shorthand
@@ -211,8 +216,9 @@ Finally, GetX provides a short form for creating observables, simply append `.ob
 Example;
 
 ```dart
-var counter = 0.obs;
-var isName = ''.obs;
+final counter = 0.obs;
+final isName = ''.obs;
+final item = MyCustomClass(id:2).obs;
 ```
 
 Whatever method you use is fine.
@@ -280,7 +286,8 @@ print( user );
 
 ### Using observable variables
 
-Consider the following code as the `MyController` for our Counter App.
+The following code as the `MyController` for the default *Flutter Counter App* that is created when
+you run `flutter create <project-name>`.
 
 ```dart
 class MyController extends GetxController {
@@ -299,8 +306,9 @@ class MyController extends GetxController {
 }
 ```
 
-To utilize our controller, we can either use the `Obx` or the `GetBuilder` Widgets which listen to changes from our
-observable variables and updates its children.
+To utilize our controller, we can either use the [GetBuilder]({{< relref "#getbuilder" >}} "GetBuilder") 
+or the [Obx]({{< relref "#obx" >}} "Obx") Widgets which listen to changes from our
+observable variables and update their children.
 
 The `Obx` is very useful when using GetX's `Dependency Manager` alongside the `State Management` or when the controller
 is already instantiated.
@@ -384,19 +392,19 @@ final _ = MyController();
 
 GetX also provides a `StateMixin` class that helps clean up asynchronous task representation.
 
-Say we are building an application that needs to fetch data from the backend. We might need a way to easily track the
-state (*loading*, *error*, *success*) and the data returned from the server in our controller and use if-else statements
-to determine the UI to render on the screen.
+> Say we are building an application that needs to fetch data from the backend. We might need a way to easily track the
+state (*loading*, *error*, *success*) and the data returned from the server in our controller and maybe use if-else statements
+to determine what UI to render on the screen.
 
 GetX's also got us covered with the `StateMixin`. This helps us keep track of our status at any point in the app using a
-clean API. You simply need to include `StateMixin` by using the `with` keyword. for example;
+clean API. You simply need to mix `StateMixin` into your controller by using the `with` keyword. for example;
 
 ```dart
 class DataController extends GetxController with StateMixin<ServerData> {}
 ```
 
 `StateMixin` also provides the `RxStatus` class to help keep track of the state of the controller at any point and also
-provides the `change` method to change the `RxStatus`. All you need to do is pass the new state and the status.
+provides the `change` method to change the `RxStatus`. All you need to do is pass the new data and the status as shown below;
 
 ```dart
 change(newState, status: RxStatus.success());
@@ -438,7 +446,7 @@ class DataController extends GetxController with StateMixin<ServerData>{
 
 ```
 
-To utilize this controller, simply use the `obx` Widget from the `GetxController`
+To utilize this controller, simply use the `obx` Widget from the `GetxController` class in your view;
 
 ```dart
 
@@ -466,11 +474,11 @@ class RemoteDataPage extends StatelessWidget {
 
 ```
 
-The `controller.obx` widget will change your UI according to the changes of the status and the state. 🐱‍🏍
+The `controller.obx` widget will update your UI according to the value of the status and the data. 🐱‍🏍
 
 ## Conclusion
 
-This article does not cover the entirety of GetX. It is simply aimed at providing a quick overview on how GetX makes you
+This article does not cover the entirety of GetX. It is simply aimed at providing a quick overview of how GetX makes you
 a happier developer with its unique approach to `State Management`.
 
 Watch out for the next article on `Dependency Management`, `Route Management` & `Helpers` in GetX.
