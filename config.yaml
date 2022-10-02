@@ -3,6 +3,7 @@ languageCode: "en-us"
 title: "< CODEMAN />"
 theme: "hugo-PaperMod"
 tags: [ "blog" ]
+googleAnalytics: G-P8W7DJ4TBB
 
 outputs:
   home:
@@ -48,6 +49,9 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   comments: true
+  images: ['https://colman.tk/cover.webp']
+  cover:
+    linkFullImages: true
 
   editPost:
     URL: "https://github.com/Colman1000/blog/tree/main/content"

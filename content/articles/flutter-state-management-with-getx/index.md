@@ -7,10 +7,10 @@ categories: ["State Management", "Flutter"]
 draft: false
 author: "@Colman1000"
 cover:
-    image: "getx-state-management-cover.jpg"
+    image: "getx-state-management-cover.png"
     alt: "GetX State Management in Flutter | Cover Image"
     caption: "Flutter State Management With GetX"
-images: ['getx-state-management-cover.jpg']
+images: ['getx-state-management-cover.png']
 keywords: ["flutter","getx","android","ios","state management"]
 summary: "GetX is a flutter package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. It also comes with helper utilities for simplifying Internationalization, Theme management, making HTTP requests, Validators and so much more."
 ---
