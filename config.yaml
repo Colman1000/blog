@@ -1,6 +1,6 @@
 baseURL: "https://blog.colman.tk/"
 languageCode: "en-us"
-title: "< CODEMAN />"
+title: "CodeMan 👨🏾‍💻"
 theme: "hugo-PaperMod"
 tags: [ "blog" ]
 googleAnalytics: G-P8W7DJ4TBB
@@ -17,7 +17,7 @@ params:
   profileMode:
     enabled: true,
     subtitle: ""
-    title: "BLOG • CODE • 🐱‍🏍"
+    title: "BLOG • CODE • 🥷🏽"
     imageUrl: "/icon.png"
     imageTitle: "CodeMan Logo"
     imageWidth: 150

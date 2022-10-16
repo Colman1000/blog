@@ -10,7 +10,7 @@ cover:
     image: "row-and-column.png"
     alt: "Row & Column Layout | Cover Image"
     caption: "Flutter Layout: Row and Container"
-images: ['row-and-column.png']
+images: ['row-and-column.png', 'row-column-diagram.png', 'ui-plain.png', 'ui.gif', 'ui-simplified.gif']
 keywords: ["flutter", "row", "column", "layout", "android","ios"]
 summary: "The first step to being comfortable and confident with either replicating a User Interface or creating a custom widget is mastering Flutter's layout widgets. Let's look at Rows and Columns in flutter "
 ---

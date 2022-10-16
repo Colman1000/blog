@@ -10,7 +10,7 @@ cover:
     image: "internationalization-cover.png"
     alt: "GetX Internationalization | Cover Image"
     caption: "Flutter Internationalization With GetX"
-images: ['internationalization-cover.png']
+images: ['internationalization-cover.png', 'settings-dart-change-app-locale.jpg']
 keywords: ["flutter", "internationalization", "localization", "languages", "getx","android","ios"]
 summary: "GetX is a flutter package that tackles State management, Route management and Dependency management in a simple, powerful and efficient manner. In this article however, we'll look at how to implement Internationalization."
 ---
