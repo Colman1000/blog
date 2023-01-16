@@ -78,6 +78,26 @@ to `/works` path.
 
 To support universal links in your app, you need to take the following steps:
 
+* Add two new keys to `Info.plist` in the *ios/Runner* directory:
+
+```jsx
+<key>FlutterDeepLinkingEnabled</key>
+<true/>
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>ENTER_YOUR_DOMAIN_HERE</string>
+    </dict>
+</array>
+
+```
+
+**NB:** Replace the `ENTER_YOUR_DOMAIN_HERE` entry above with the domain you want to use, such
+as [colman.tk](https://colman.tk).
+
 * Add an entitlement that specifies the domains your app supports:
 
 Open the `Associated Domains` section in the `Capabilities` tab and add an entry for each domain that your app supports,
