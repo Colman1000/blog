@@ -2,8 +2,8 @@
   "name": "blog",
   "version": "1.0.0",
   "scripts": {
-    "deploy": "hugo && firebase deploy --only hosting:blog-innocraft-colman"
+    "deploy": "hugo && firebase deploy --only hosting:blog-innocraft-colman",
+    "start": "hugo server"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
