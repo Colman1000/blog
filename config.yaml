@@ -1,4 +1,4 @@
-baseURL: "https://blog.colman.tk/"
+baseURL: "https://blog-innocraft-colman.web.app/"
 languageCode: "en-us"
 title: "CodeMan 👨🏾‍💻"
 theme: "hugo-PaperMod"
@@ -24,7 +24,7 @@ params:
     imageHeight: 150
     buttons:
       - name: 🎪 Visit Portfolio
-        url: "https://colman.tk"
+        url: "https://innocraft-colman.web.app"
   socialIcons:
     - name: "github"
       url: "https://github.com/colman1000"
@@ -49,7 +49,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   comments: true
-  images: ['https://colman.tk/cover.webp']
+  images: ['https://innocraft-colman.web.app/cover.webp']
   cover:
     linkFullImages: true
 
@@ -65,7 +65,7 @@ menu:
     #    - identifier: portfolio
     #      name: Portfolio
     #      pre: 🎪
-    #      url: https://colman.tk
+    #      url: https://innocraft-colman.web.app
     #      weight: 40
     - identifier: articles
       name: Articles
